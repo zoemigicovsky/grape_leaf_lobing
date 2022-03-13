@@ -80,6 +80,6 @@ summary(model1)
 # F-statistic:  1239 on 1 and 2630 DF,  p-value: < 2.2e-16
 
 
-pdf("figure3.pdf", width=8, height=4.5)
+pdf("figures/figure3.pdf", width=8, height=4.5)
 ggarrange(p1, p2, ncol=2, labels="AUTO")
 dev.off()
