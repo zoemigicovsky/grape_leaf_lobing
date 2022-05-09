@@ -6,6 +6,10 @@ library(tidyverse)
 #Need a version of the landmark file with just the landmarks
 goali_landmarks <- read_csv("data/goali_landmarks.csv")
 
+#two vines are mislabelled according to scans
+goali_landmarks$accession <- gsub("11618070", "16118070",goali_landmarks$accession)
+goali_landmarks$accession <- gsub("16120921", "16129021",goali_landmarks$accession)
+
 goali_landmarks_info <- goali_landmarks %>% select(accession, year)
 goali_landmarks <- goali_landmarks %>% select(x1:y21)
 
@@ -26,7 +30,7 @@ stdscores <- as.matrix(GPA$stdscores)
 pca_results <- cbind(goali_landmarks_info, stdscores)
 write.csv(pca_results, file="data/goali_PC_scores_info.csv", quote=FALSE, row.names = F)
 write.csv(as.matrix(GPA$stdscores), file="data/goali_PC_scores.csv", quote=FALSE)
-write.csv(as.matrix(GPA$percent), file="data/goali_PC_percents", quote=FALSE)
+write.csv(as.matrix(GPA$percent), file="data/goali_PC_percents.csv", quote=FALSE)
 write.csv(as.matrix(GPA$rotated), file="data/goali_GPA_rotated.csv", quote=FALSE)
 
 #restructuring of matrix

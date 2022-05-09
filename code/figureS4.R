@@ -12,7 +12,7 @@ data <- read_csv("data/goali_all_data.csv")
 data <- data %>% mutate(vein_lengths=midvein_length+distal_length+proximal_length) 
 data <- data %>% mutate(branch_lengths=petiolar_length+dist_branch_length+mid_branch_length) 
 
-pdf("figures/figureS3.pdf", width=4, height=4.5)
+pdf("figures/figureS4.pdf", width=4, height=4.5)
 data %>% ggplot(aes(x=vein_lengths, y=branch_lengths, colour=distal_lobing))+
   geom_point(alpha=0.6, size=2, stroke=0)+
   theme_few()+

@@ -28,7 +28,8 @@ p1 <- data %>% ggplot(aes(y=proximal_lobing, x=PC1, colour=proximal_lobing))+
   geom_point(alpha=0.6, size=2, stroke=0)+
   theme_few()+
   scale_color_viridis(limits = c(0, 1.23))+
-  theme(legend.position = "bottom")
+  theme(legend.position = "bottom")+
+  xlab("PC1 (43.69%)")
 
 pdf("figures/figureS2.pdf", width=6, height=5)
 ggarrange(p1,labels="AUTO")

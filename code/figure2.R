@@ -94,7 +94,8 @@ p1 <- data %>% ggplot(aes(y=distal_lobing, x=PC1, colour=distal_lobing))+
   geom_point(alpha=0.6, size=2, stroke=0)+
   theme_few()+
   scale_color_viridis(limits = c(0, 1.23))+
-  theme(legend.position = "bottom")
+  theme(legend.position = "bottom")+
+  xlab("PC1 (43.69%)")
 
 
 #Code to get 21 landmarks plotted
